@@ -1,0 +1,43 @@
+from this import d
+import pygame,os,time,random
+
+WIDTH, HEIGHT = 750, 750
+WIN = pygame.display.set_mode((WIDTH,HEIGHT))
+pygame.display.set_caption("Space Shooter Tutorial")
+
+# Load images
+RED_SPACE_SHIP = pygame.image.load("D:\\Spaceship_python\\assets\\pixel_ship_red_small.png").convert()
+GREEN_SPACE_SHIP = pygame.image.load("D:\\Spaceship_python\\assets\\pixel_ship_green_small.png").convert()
+BLUE_SPACE_SHIP = pygame.image.load("D:\\Spaceship_python\\assets\\pixel_ship_blue_small.png").convert()
+
+# Player ship
+YELLOW_SPACE_SHIP = pygame.image.load("D:\\Spaceship_python\\assets\\pixel_ship_yellow.png").convert()
+
+# Lasers
+RED_LASER = pygame.image.load("D:\\Spaceship_python\\assets\\pixel_laser_red.png").convert()
+
+GREEN_LASER = pygame.image.load("D:\\Spaceship_python\\assets\\pixel_laser_green.png").convert()
+BLUE_LASER = pygame.image.load("D:\\Spaceship_python\\assets\\pixel_laser_blue.png").convert()
+YELLOW_LASER = pygame.image.load("D:\\Spaceship_python\\assets\\pixel_laser_yellow.png").convert()
+
+# Background
+BG = pygame.transform.scale(pygame.image.load("D:\\Spaceship_python\\assets\\background-black.png")
+,(WIDTH,HEIGHT)).convert()
+def redraw_window():
+    WIN.blit(BG, (0,0))
+        
+    pygame.display.update()
+def main():
+    run = True
+    FPS = 60
+    clock = pygame.time.Clock()
+    redraw_window()
+    
+
+    while run:
+        clock.tick(FPS)
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+main()
